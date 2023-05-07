@@ -1,5 +1,5 @@
 
-# TWRRR - Twitter Clone
+# TWRRR
 
 Twr is a Twitter clone with not so much functionality. The idea of this project was to gain and showcase skills using Redux Toolkit and MaterialUI
 
