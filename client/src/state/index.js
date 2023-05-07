@@ -5,6 +5,10 @@ const initialState = {
     user: null,
     token: null,
     posts: [],
+    _persist: {
+        version: 1,
+        rehydrated: false,
+    },
 };
 
 export const authSlice = createSlice({
@@ -15,7 +19,10 @@ export const authSlice = createSlice({
             state.mode = state.mode === "light" ? "dark" : "light";
         },
         setLogin: (state, action) => {
-            state.user = action.payload.user;
+            state.user = {
+                ...action.payload.user,
+                friends: Array.isArray(action.payload.user.friends) ? action.payload.user.friends : [],
+            };
             state.token = action.payload.token;
         },
         setLogout: (state) => {
